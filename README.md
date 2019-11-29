@@ -1,0 +1,1 @@
+##An app created for the pusrpose of demonstrating deployment of a laravel app on AWS
