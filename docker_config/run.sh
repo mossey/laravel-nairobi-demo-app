@@ -1,6 +1,9 @@
 #!/bin/bash
 
 
+echo ${public} >> /var/www/html/storage/oauth-public.key 
+echo ${private} >> /var/www/html/storage/oauth-private.key 
+
 
 echo "APP_KEY="  ${APP_KEY} >> .env
 echo "APP_DEBUG="${APP_DEBUG} >> .env
@@ -21,7 +24,6 @@ php artisan route:cache
 composer dumpautoload -o
 
 
-chmod -R 777  storage
 unset APP_KEY
 /usr/sbin/apache2ctl start
 tail -f storage/logs/laravel.log
